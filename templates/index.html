@@ -26,19 +26,19 @@
         </style>
     </head>
     <body>
-        <h2>Tic-Tac-Toe</h2>
-        <div id="game-control">
-            <form>
+        <h1>Tic-Tac-Toe</h1>
+        <div id='game-control'>
+            <form action='/random'>
                 Choose first player:<br>
                 <select id='first-player'>
                 <option value='player'>Me</option>
                 <option value='computer'>Computer</option>
                 <option value='random'>Surprise Me!</option>
                 </select><br>
-                <button id='start-game'>Start New Game</button>
+                <button type='submit' id='start-game'>Start New Game</button>
             </form>
         </div>
-        <div id="game-board">
+        <div id='game-board'>
             <table rules='all' frame='void'>
                 <tr>
                     <td class='grid-square' id='square1'></td>

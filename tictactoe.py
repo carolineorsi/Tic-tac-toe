@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for, jsonify
+import random
 
 app = Flask(__name__)
 
@@ -7,6 +8,14 @@ def show_index():
     """ The index page of the site """
 
     return render_template('index.html')
+
+
+@app.route('/random')
+def choose_player():
+    players = ['user', 'computer']
+    first = random.choice(players)
+
+    return first
 
 
 if __name__ == '__main__':
