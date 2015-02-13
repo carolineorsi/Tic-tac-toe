@@ -1,5 +1,12 @@
-$(".grid-square").hover(
-    function() {
-        $(this).css("background", "blue");
-    }
-);
+$(".grid-square")
+    .mouseenter(
+        function() {
+            $(this).css("background", "#CCC");
+        }
+    )
+    .mouseleave(
+        function() {
+            $(this).css("background", "white");
+
+        }
+    );
