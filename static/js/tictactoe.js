@@ -16,3 +16,8 @@ $(".grid-square")
             $(this).text("O");
         }
     );
+
+$(".start-game").click(function() {
+    $(".grid-square").empty();
+    }
+);

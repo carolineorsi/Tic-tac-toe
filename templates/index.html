@@ -19,14 +19,26 @@
                 text-align: center;
             }
 
+            #game-board {
+                padding: 30px;
+            }
+
         </style>
     </head>
     <body>
         <h2>Tic-Tac-Toe</h2>
-        <div>
-
+        <div id="game-control">
+            <form>
+                Choose first player:<br>
+                <select id='first-player'>
+                <option value='player'>Me</option>
+                <option value='computer'>Computer</option>
+                <option value='random'>Surprise Me!</option>
+                </select><br>
+                <button id='start-game'>Start New Game</button>
+            </form>
         </div>
-        <div>
+        <div id="game-board">
             <table rules='all' frame='void'>
                 <tr>
                     <td class='grid-square' id='square1'></td>
