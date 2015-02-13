@@ -1,3 +1,5 @@
+import random
+
 def choose_player():
     players = ['user', 'computer']
     random.shuffle(players)
@@ -5,6 +7,6 @@ def choose_player():
     players = {'X': players.pop(), 'O': players.pop()}
 
     return players
-    
 
-def check_winner(board):
+
+# def check_winner(board):
