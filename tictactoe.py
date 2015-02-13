@@ -20,8 +20,4 @@ def check_winner(board):
 
 
 def is_available(board, square):
-    if board[square] != square:
-        return False
-
-    else:
-        return True
+    return board[square] == square
