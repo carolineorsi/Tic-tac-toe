@@ -7,6 +7,12 @@ $(".grid-square")
     .mouseleave(
         function() {
             $(this).css("background", "white");
+        }
+    );
 
+$(".grid-square")
+    .click(
+        function() {
+            $(this).text("O");
         }
     );

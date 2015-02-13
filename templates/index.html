@@ -5,36 +5,48 @@
             body {
                 text-align: center;
             }
+            
+            table {
+                margin: auto;
+            }
+
             td {
                 font-size: 24pt;
                 padding: 20px;
-                border: solid 1px black;
+                border: solid 2px black;
+                width: 50px;
+                height: 90px;
+                text-align: center;
             }
+
         </style>
     </head>
     <body>
         <h2>Tic-Tac-Toe</h2>
         <div>
-            <table>
+
+        </div>
+        <div>
+            <table rules='all' frame='void'>
                 <tr>
-                    <td class="grid-square" id="square1">X</td>
-                    <td class="grid-square" id="square1">O</td>
-                    <td class="grid-square" id="square1">X</td>
+                    <td class='grid-square' id='square1'></td>
+                    <td class='grid-square' id='square1'></td>
+                    <td class='grid-square' id='square1'></td>
                 </tr>
                 <tr>
-                    <td class="grid-square" id="square4">O</td>
-                    <td class="grid-square" id="square5">X</td>
-                    <td class="grid-square" id="square6">O</td>
+                    <td class='grid-square' id='square4'></td>
+                    <td class='grid-square' id='square5'></td>
+                    <td class='grid-square' id='square6'></td>
                 </tr>
                 <tr>
-                    <td class="grid-square" id="square7">X</td>
-                    <td class="grid-square" id="square8">O</td>
-                    <td class="grid-square" id="square9">X</td>
+                    <td class='grid-square' id='square7'></td>
+                    <td class='grid-square' id='square8'></td>
+                    <td class='grid-square' id='square9'></td>
                 </tr>
             </table>
         </div>
 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-    <script src="/static/js/tictactoe.js"></script>
+    <script src='/static/js/tictactoe.js'></script>
     </body>
 </html>
