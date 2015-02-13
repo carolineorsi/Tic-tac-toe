@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, redirect, url_for, jsonify
 import random
-import tictactoe
+# import tictactoe
 
 app = Flask(__name__)
 

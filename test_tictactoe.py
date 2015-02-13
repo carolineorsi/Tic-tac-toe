@@ -5,12 +5,9 @@ from tictactoe import *
 class TestTicTacToe(unittest.TestCase):
 
     def setUp(self):
-        # self.ll = LinkedList()
-        # self.ll.add_node(1)
-        # self.ll.add_node(2)
-        # self.ll.add_node(3)
-        # self.ll.add_node(4)
-        # self.ll_as_list = [1, 2, 3, 4]
+        self.board1 = ['X','X','X',3,4,5,6,7,8]
+        self.board2 = [0,'O',2,3,'O',5,6,'O',8]
+        self.board3 = [0,'X',2,'O','O',5,'X','O',8]
         pass
 
     def test_choose_player(self):
@@ -29,6 +26,10 @@ class TestTicTacToe(unittest.TestCase):
                 count += 1
         self.assertTrue((count / 10000) < 0.51 and (count / 10000) > 0.49)
 
+    def test_check_winner(self):
+        self.assertEqual(check_winner(self.board1), 'X')
+        self.assertEqual(check_winner(self.board2), 'O')
+        self.assertFalse(check_winner(self.board3))
 
 
 
