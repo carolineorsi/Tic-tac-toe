@@ -17,3 +17,11 @@ def check_winner(board):
             return player
 
     return None
+
+
+def is_available(board, square):
+    if board[square] != square:
+        return False
+
+    else:
+        return True

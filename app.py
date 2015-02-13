@@ -11,7 +11,7 @@ def show_index():
     return render_template('index.html')
 
 
-@app.route('/random')
+@app.route('/game')
 def choose_player():
     players = ['user', 'computer']
     first = random.choice(players)
