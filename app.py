@@ -8,7 +8,9 @@ app = Flask(__name__)
 def show_index():
     """ The index page of the site """
 
-    return render_template('index.html')
+    board = [i for i in range(10)]
+
+    return render_template('index.html', board=board)
 
 
 @app.route('/game')

@@ -40,21 +40,13 @@
         </div>
         <div id='game-board'>
             <table rules='all' frame='void'>
+                {% for i in range(3) %}
                 <tr>
-                    <td class='grid-square' id='square0'>0</td>
-                    <td class='grid-square' id='square1'>1</td>
-                    <td class='grid-square' id='square2'>2</td>
+                    {% for j in range(3) %}
+                        <td class='grid-square' id='square{{ (3 * i) + j }}'>{{ board[(3 * i) + j] }}</td>
+                    {% endfor %}
                 </tr>
-                <tr>
-                    <td class='grid-square' id='square3'>3</td>
-                    <td class='grid-square' id='square4'>4</td>
-                    <td class='grid-square' id='square5'>5</td>
-                </tr>
-                <tr>
-                    <td class='grid-square' id='square6'>6</td>
-                    <td class='grid-square' id='square7'>7</td>
-                    <td class='grid-square' id='square8'>8</td>
-                </tr>
+                {% endfor %}
             </table>
         </div>
 
