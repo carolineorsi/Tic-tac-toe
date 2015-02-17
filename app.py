@@ -12,11 +12,18 @@ def show_index():
 
 
 @app.route('/game')
-def choose_player():
-    players = ['user', 'computer']
-    first = random.choice(players)
+def start_game():
+    first_player = request.args.get('first-player')
+    
+    if first_player == 'random':
+        player_opts = ['user', 'computer']
+        first_player = random.choice(player_opts)
 
-    return first
+    if first_player == 'computer':
+        return 'Computer goes first'
+    else:
+        return 'Player goes first'
+
 
 
 if __name__ == '__main__':
