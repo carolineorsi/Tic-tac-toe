@@ -8,9 +8,7 @@ app = Flask(__name__)
 def show_index():
     """ The index page of the site """
 
-    board = [i for i in range(10)]
-
-    return render_template('index.html', board=board)
+    return render_template('index.html')
 
 
 @app.route('/game')
@@ -22,7 +20,7 @@ def start_game():
         first_player = random.choice(player_opts)
 
     if first_player == 'computer':
-        return 'Computer goes first'
+        return render_template('index.html', board=[0,1,2,3,'X',5,6,7,8])
     else:
         return 'Player goes first'
 

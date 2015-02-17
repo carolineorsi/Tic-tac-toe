@@ -21,3 +21,11 @@ $(".start-game").click(function() {
     $(".grid-square").empty();
     }
 );
+
+function updateBoard(board) {
+    for (i = 0; i < 10; i++) {
+        if (isNaN(board[i])) {
+            $('#square' + i).text(board[i]);
+        }
+    }
+}
