@@ -1,5 +1,7 @@
 import random
 
+# EMPTY_BOARD = [i for i in range(10)]
+
 def choose_player():
     players = ['user', 'computer']
     random.shuffle(players)

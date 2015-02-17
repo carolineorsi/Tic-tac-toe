@@ -1,3 +1,19 @@
+$('#start-game').click(startGame);
+
+function startGame(evt) {
+    evt.preventDefault();
+
+    $.get('/game',
+          {'first-player': $('#first-player').val()},
+          function(data) {
+            console.log(data.message);
+            if (data.board) {
+                updateBoard(data.board);
+            };
+          }
+    );
+}
+
 $(".grid-square")
     .mouseenter(
         function() {
@@ -10,17 +26,13 @@ $(".grid-square")
         }
     );
 
-$(".grid-square")
-    .click(
-        function() {
-            $(this).text("O");
-        }
-    );
+// $(".grid-square")
+//     .click(
+//         function() {
+//             $(this).text("O");
+//         }
+//     );
 
-$(".start-game").click(function() {
-    $(".grid-square").empty();
-    }
-);
 
 function updateBoard(board) {
     for (i = 0; i < 10; i++) {
