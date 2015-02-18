@@ -1,12 +1,11 @@
 $('#start-game').click(startGame);
 
 function startGame(evt) {
-    evt.preventDefault();
+    clearBoard();
 
     $.get('/game',
           {'first-player': $('#first-player').val()},
           function(data) {
-            console.log(data.message);
             showAlert(data.message);
             if (data.board) {
                 updateBoard(data.board);
@@ -43,9 +42,18 @@ function updateBoard(board) {
     }
 }
 
+
+function clearBoard() {
+    for (i = 0; i < 10; i++) {
+        $('#square' + i).empty();
+    }
+}
+
+
 function showAlert(message) {
+    $("#message-alert").empty(message);
     $("#message-alert").text(message);
-    
+
     setTimeout(function(message) {
         $("#message-alert").empty();
     }, 3000);
