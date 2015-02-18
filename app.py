@@ -11,7 +11,7 @@ def show_index():
     return render_template('index.html')
 
 
-@app.route('/game')
+@app.route('/start')
 def start_game():
     first_player = request.args.get('first-player')
     
@@ -27,6 +27,12 @@ def start_game():
 
     else:
         return jsonify(message='You go first.')
+
+
+@app.route('/game')
+def play_game():
+
+    return jsonify(message='Computer Played')
 
 
 

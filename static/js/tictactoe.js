@@ -1,19 +1,5 @@
 $('#start-game').click(startGame);
 
-function startGame(evt) {
-    clearBoard();
-
-    $.get('/game',
-          {'first-player': $('#first-player').val()},
-          function(data) {
-            showAlert(data.message);
-            if (data.board) {
-                updateBoard(data.board);
-            };
-          }
-    );
-}
-
 $(".grid-square")
     .mouseenter(
         function() {
@@ -35,6 +21,22 @@ $(".grid-square")
         }
     );
 
+
+function startGame(evt) {
+    clearBoard();
+
+    $.get('/start',
+          {'first-player': $('#first-player').val()},
+          function(data) {
+            showAlert(data.message);
+            if (data.board) {
+                updateBoard(data.board);
+            };
+          }
+    );
+};
+
+
 function addO(square) {
     if (square.text() === 'X' || $(this).text() === 'O') {
         showAlert("Invalid move. Choose another square.")
@@ -45,14 +47,23 @@ function addO(square) {
         square.text("O");
         return true;
     }
-}
+};
+
 
 function makePlay() {
     var board = getBoardState();
 
-    
+    $.get('/game',
+      {'board': board},
+      function(data) {
+        showAlert(data.message);
+        // if (data.board) {
+        //     updateBoard(data.board);
+        // };
+      }
+    );
 
-}
+};
 
 
 function getBoardState() {
@@ -69,7 +80,7 @@ function getBoardState() {
     }
 
     return board;
-}
+};
 
 
 function updateBoard(board) {
@@ -79,14 +90,14 @@ function updateBoard(board) {
 
         }
     }
-}
+};
 
 
 function clearBoard() {
     for (i = 0; i < 10; i++) {
         $('#square' + i).empty();
     }
-}
+};
 
 
 function showAlert(message) {
@@ -96,4 +107,4 @@ function showAlert(message) {
     // setTimeout(function(message) {
     //     $("#message-alert").empty();
     // }, 3000);
-}
+};
