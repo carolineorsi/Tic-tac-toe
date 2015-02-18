@@ -7,6 +7,7 @@ function startGame(evt) {
           {'first-player': $('#first-player').val()},
           function(data) {
             console.log(data.message);
+            showAlert(data.message);
             if (data.board) {
                 updateBoard(data.board);
             };
@@ -40,4 +41,12 @@ function updateBoard(board) {
             $('#square' + i).text(board[i]);
         }
     }
+}
+
+function showAlert(message) {
+    $("#message-alert").text(message);
+    
+    setTimeout(function(message) {
+        $("#message-alert").empty();
+    }, 3000);
 }
