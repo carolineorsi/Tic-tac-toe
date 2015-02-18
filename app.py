@@ -23,7 +23,7 @@ def start_game():
         board = [i for i in range(10)]
         board[4] = 'X'
         return jsonify(board=board,
-                       message='Computer goes first.')
+                       message='Computer went first. Your turn.')
 
     else:
         return jsonify(message='You go first.')
