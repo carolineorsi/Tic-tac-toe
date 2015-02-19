@@ -13,26 +13,24 @@ def show_index():
 
 @app.route('/start')
 def start_game():
-    first_player = request.args.get('first-player')
+    players = tictactoe.set_players(request.args.get('first-player'))
     
-    if first_player == 'random':
-        player_opts = ['user', 'computer']
-        first_player = random.choice(player_opts)
-
-    if first_player == 'computer':
+    if players['X'] == 'computer':
         board = [i for i in range(10)]
         board[4] = 'X'
         return jsonify(board=board,
+                       players=players,
                        message='Computer went first. Your turn.')
 
     else:
-        return jsonify(message='You go first.')
+        return jsonify(players=players,
+                       message='You go first.')
 
 
 @app.route('/game')
 def play_game():
 
-    return jsonify(message='Computer Played')
+    return jsonify(message='Computer to play next move...')
 
 
 
