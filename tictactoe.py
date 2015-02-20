@@ -33,6 +33,7 @@ def check_possible_win(board):
 
     for combo in WINNING_COMBOS:
         for square in combo:
+            pass
 
 
 
