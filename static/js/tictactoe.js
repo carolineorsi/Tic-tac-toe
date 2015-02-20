@@ -132,3 +132,24 @@ var model = {
         return this.players['X'];
     }
 };
+
+var gameControlView = {
+    init: function() {
+        this.firstPlayer = $("#first-player");
+        this.startGame = $("#start-game");
+
+        this.startGame.click(function() {
+            // Call function in controller, passing in firstPlayer value
+        });
+    }
+};
+
+var gameBoardView = {
+    init: function() {
+
+    }
+};
+
+var messageView = {
+    
+}
